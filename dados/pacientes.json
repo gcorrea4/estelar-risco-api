@@ -1,0 +1,37 @@
+[
+    {
+        "id": 1,
+        "nome": "jose maciel",
+        "idade": 15,
+        "localizacao": "ribeirinhos",
+        "funcao": "morador",
+        "condicoes": [
+            "tosse",
+            "temperatura alta"
+        ],
+        "criado_em": "2026-06-04T16:42:14"
+    },
+    {
+        "id": 2,
+        "nome": "junior maciel",
+        "idade": 12,
+        "localizacao": "ribeirinhos",
+        "funcao": "agente",
+        "condicoes": [
+            "asma"
+        ],
+        "criado_em": "2026-06-04T17:44:35"
+    },
+    {
+        "id": 3,
+        "nome": "eric",
+        "idade": 21,
+        "localizacao": "ribeirinhos",
+        "funcao": "morador",
+        "condicoes": [
+            "asma",
+            "diabetes"
+        ],
+        "criado_em": "2026-06-08T21:34:17"
+    }
+]

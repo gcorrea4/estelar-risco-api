@@ -1,0 +1,8 @@
+services:
+  - type: web
+    name: estelar-risco-api
+    runtime: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn api_risco:app
+    healthCheckPath: /health
