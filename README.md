@@ -94,14 +94,58 @@ A pontuação soma três blocos e classifica o resultado:
 
 ---
 
-## 🚀 Rodar localmente
+## ⏰ Observação importante para quem for testar online
+
+Esta API está hospedada no **plano gratuito do Render**, que **hiberna o servidor após ~15 minutos sem uso**. Por isso:
+
+- A **primeira requisição** depois de um período parado pode levar **~40 a 60 segundos** (o servidor está "acordando"). Isso é normal — basta aguardar.
+- As requisições **seguintes são instantâneas**.
+- Se estiver testando pelo site Estelar e a primeira tentativa demorar ou der erro de "serviço indisponível", **aguarde ~40s e tente de novo**.
+
+> 💡 **Dica para apresentações:** abra a página de Risco uma vez ~1 minuto antes de começar, só para "acordar" o servidor.
+
+Se preferir rodar **na sua própria máquina** (sem depender do Render), siga o passo a passo abaixo. ⬇️
+
+---
+
+## 🖥️ Como rodar na sua máquina (passo a passo)
+
+**Pré-requisitos:** [Python 3.10+](https://www.python.org/downloads/) e [Git](https://git-scm.com/downloads) instalados.
+> No Windows, ao instalar o Python, marque a opção **"Add Python to PATH"**.
 
 ```bash
+# 1. Clone o repositório
+git clone https://github.com/gcorrea4/estelar-risco-api.git
+cd estelar-risco-api
+
+# 2. (Recomendado) crie um ambiente virtual
+python -m venv .venv
+# Ative-o:
+#   Windows (PowerShell):  .venv\Scripts\Activate.ps1
+#   Linux / macOS:         source .venv/bin/activate
+
+# 3. Instale as dependências
 pip install -r requirements.txt
-python api_risco.py     # http://localhost:5001
+
+# 4. Rode a API
+python api_risco.py
 ```
 
-Teste: `curl http://localhost:5001/health`
+A API sobe em **http://localhost:5001**.
+
+**Teste rápido** (em outro terminal, ou no navegador para o /health):
+
+```bash
+# Health check
+curl http://localhost:5001/health
+
+# Cálculo de risco
+curl -X POST http://localhost:5001/calcular-risco ^
+  -H "Content-Type: application/json" ^
+  -d "{\"sinais\":{\"temperatura\":39.5,\"saturacao\":88,\"frequencia_cardiaca\":135,\"pressao_sistolica\":185,\"pressao_diastolica\":125},\"sintomas\":{\"dor_peito\":true},\"contexto\":{\"distancia_hospital_km\":150,\"internet_disponivel\":false,\"medicamentos_basicos\":false}}"
+```
+
+> 💡 Para testar **junto com o site** apontando para a sua máquina, rode o frontend Estelar com a variável `VITE_RISCO_API_URL=http://localhost:5001` no arquivo `.env.local`.
 
 > O projeto original também tem um menu interativo de terminal: `python main.py`.
 
