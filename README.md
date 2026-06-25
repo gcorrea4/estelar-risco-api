@@ -185,12 +185,11 @@ estelar-risco-api/
 
 ---
 
-## 👥 Equipe — 1TDSPB FIAP
+## 👥 Autores
 
 | Nome | RM | Papel |
 |---|---|---|
-| Gabriel Correa Souza | RM567903 | Integração à plataforma Estelar + API REST |
-| Eric Maciel | RM567398 | Lógica original do AstraCare (`risco.py`) |
-| Kayque Duarte | RM567980 | — |
+| Gabriel Correa Souza | Integração à plataforma Estelar + API REST |
+| Eric Maciel | Lógica original do AstraCare (`risco.py`) |
 
 Global Solution 2026/1 · FIAP
