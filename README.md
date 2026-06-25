@@ -187,8 +187,8 @@ estelar-risco-api/
 
 ## 👥 Autores
 
-| Nome | RM | Papel |
-|---|---|---|
+| Nome | Papel |
+|---|---|
 | Gabriel Correa Souza | Integração à plataforma Estelar + API REST |
 | Eric Maciel | Lógica original do AstraCare (`risco.py`) |
 
